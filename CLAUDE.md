@@ -7,7 +7,8 @@ Tasks are TBD — likely a static GitHub Pages site and/or Python/Clojure experi
 
 - Started on CC web, may move to CLI later
 - Using a dummy repo to learn the tooling before applying it to real projects
-- The `.claude/settings.json` sets git author to `yuhan0` and disables commit attribution trailers
+- `.claude/settings.json` is intentionally empty — personal config belongs elsewhere
+- The CC web environment setup script sets git author (`yuhan0`) and attribution trailer (`Co-Authored-By: Claude`) at container init
 
 ## Working style
 
@@ -24,4 +25,4 @@ The user is deliberately trying to understand failure modes and tool mechanics, 
 
 - Running in CC web (ephemeral remote container, GitHub MCP for GH interactions, no `gh` CLI)
 - Git push goes through a local proxy to GitHub — occasional 403s if repo access hasn't been granted
-- `SessionStart` hook sets git config on each new session
+- No SessionStart hook in repo — git config is handled by the environment setup script instead
